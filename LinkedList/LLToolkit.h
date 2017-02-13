@@ -23,8 +23,7 @@ public:
 	// head element
 	static void LLToolkit::headRemove(Node<T>*& headPtr)
 	{
-		//if (headPtr == nullptr) throw std::exception("Cannot remove head because head is already nullptr");
-		if (headPtr == nullptr) return; //TODO fix shitty testcase
+		if (headPtr == nullptr) return; 
 
 		auto tempHeadPtr = headPtr->next;
 		delete headPtr;
@@ -39,13 +38,10 @@ public:
 
 		// Insert new node after prevPtr
 		Node<T>* insNode = new Node<T>(info, prevPtr->next);
-		insNode->previous = prevPtr;
 
 		// Set next of first node to point to inserted node
 		prevPtr->next = insNode;
 
-		// Set previous of last node to point to inserted node
-		if (insNode->next != nullptr) insNode->next->previous = insNode;
 	}
 
 	// Precondition: prevPtr points to Node just before Node to remove
@@ -64,12 +60,10 @@ public:
 		if (next == nullptr)
 		{
 			prevPtr->next = nullptr;
-			prevPtr->previous = prevPtr;
 		}
 		else
 		{
 			prevPtr->next = next;
-			next->previous = prevPtr;
 		}
 		delete remove;
 	}
