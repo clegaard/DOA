@@ -6,7 +6,7 @@ class LLToolkit
 public:
 	// Precondition: headPtr points to the head of a list
 	// Postcondition: Info has been inserted at the head of the list, and headPtr is updated
-	void LLToolkit::headInsert(Node<T>*& headPtr, T info)
+	void headInsert(Node<T>*& headPtr, T info)
 	{
 		// elements are inserted
 		if (headPtr == nullptr)
@@ -21,7 +21,7 @@ public:
 	// Precondition: headPtr points to the head of a list with at least 1 element
 	// Postcondition: The head element has been removed and headPtr is updated to point to the new
 	// head element
-	static void LLToolkit::headRemove(Node<T>*& headPtr)
+	static void headRemove(Node<T>*& headPtr)
 	{
 		if (headPtr == nullptr) return; 
 
@@ -32,7 +32,7 @@ public:
 
 	// Precondition: prevPtr points to Node just before insertion point
 	// Postcondition: A new Node with data=info has been inserted into the list after prevPtr
-	void LLToolkit::insert(Node<T>* prevPtr, T info)
+	void insert(Node<T>* prevPtr, T info)
 	{
 		if (prevPtr == nullptr) return;
 
@@ -46,7 +46,7 @@ public:
 
 	// Precondition: prevPtr points to Node just before Node to remove
 	// Postcondition: The Node after prevPtr has been removed from the list
-	void LLToolkit::remove(Node<T>* prevPtr)
+	void remove(Node<T>* prevPtr)
 	{
 		// Check if list is empty
 		if (prevPtr == nullptr) return;
@@ -71,7 +71,7 @@ public:
 	// Precondition: sourcePtr is the head pointer of a linked list.
 	// Postcondition: A pointer to a deep copy of the linked list is returned. The original list is
 	// unaltered.
-	Node<T>* LLToolkit::copy(Node<T>* sourcePtr)
+	Node<T>* copy(Node<T>* sourcePtr)
 	{
 		if (sourcePtr == nullptr) return nullptr;
 
